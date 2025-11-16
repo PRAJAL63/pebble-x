@@ -15,7 +15,6 @@ export default function Register() {
 
   return (
     <div className="flex min-h-screen">
-      {/* Left Image/Illustration */}
       <div className="hidden lg:flex w-1/2 bg-linear-to-tr from-green-800 to-teal-800 items-center justify-center">
         <img
           src="https://images.unsplash.com/photo-1581091215362-32f0f2286ca0?auto=format&fit=crop&w=800&q=80"
@@ -24,7 +23,6 @@ export default function Register() {
         />
       </div>
 
-      {/* Right Form */}
       <div className="flex flex-col justify-center w-full lg:w-1/2 px-10">
         <div className="max-w-md w-full mx-auto bg-white p-10 rounded-2xl shadow-xl">
           <h2 className="text-3xl font-bold mb-6 text-center text-gray-800">Register</h2>

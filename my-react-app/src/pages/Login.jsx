@@ -13,7 +13,6 @@ export default function Login() {
 
   return (
     <div className="flex min-h-screen">
-      {/* Left Image/Illustration */}
       <div className="hidden lg:flex w-1/2 bg-linear-to-tr from-blue-950 to-blue-950 items-center justify-center">
         <img
           src="https://images.unsplash.com/photo-1581092334518-2e4b0c08f3c2?auto=format&fit=crop&w=800&q=80"
@@ -22,7 +21,6 @@ export default function Login() {
         />
       </div>
 
-      {/* Right Form */}
       <div className="flex flex-col justify-center w-full lg:w-1/2 px-10">
         <div className="max-w-md w-full mx-auto bg-white p-10 rounded-2xl shadow-xl">
           <h2 className="text-3xl font-bold mb-6 text-center text-gray-800">Login</h2>
