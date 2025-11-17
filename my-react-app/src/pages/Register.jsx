@@ -15,7 +15,7 @@ export default function Register() {
 
   return (
     <div className="flex min-h-screen">
-      <div className="hidden lg:flex w-1/2 bg-linear-to-tr from-green-800 to-teal-800 items-center justify-center">
+      <div className="hidden lg:flex w-1/2 bg-linear-to-tr from-green-950 to-green-900 items-center justify-center">
         <img
           src="https://images.unsplash.com/photo-1581091215362-32f0f2286ca0?auto=format&fit=crop&w=800&q=80"
           alt="Hardware wala image"
