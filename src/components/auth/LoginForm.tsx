@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { login } from '@/lib/services/auth';
 import loginSchema from '@/schema/auth/loginSchema';

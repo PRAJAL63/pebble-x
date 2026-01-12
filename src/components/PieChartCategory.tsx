@@ -17,7 +17,7 @@ const PieChartCategory = () => {
       <ResponsiveContainer width="100%" height={200}>
         <PieChart>
           <Pie data={pieData} dataKey="value" outerRadius={80} label>
-            {pieData.map((entry, index) => (
+            {pieData.map((_entry, index) => (
               <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
             ))}
           </Pie>
