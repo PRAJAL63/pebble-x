@@ -1,12 +1,12 @@
-import React from 'react';
+import { Button } from './ui/button';
 
-export default function Header() {
+const Header = () => {
   return (
-    <header className="bg-white shadow-sm p-4 flex justify-between items-center">
-      <h1 className="text-xl font-semibold">Dashboard Overview</h1>
-      <div className="flex items-center space-x-4">
-        <span className="text-sm text-gray-600">User</span>
-      </div>
+    <header className="p-4 border-b flex justify-between items-center">
+      <h1 className="text-xl font-semibold">Dashboard</h1>
+      <Button className="cursor-pointer border px-4 py-2 text-sm rounded-2xl">User</Button>
     </header>
   );
-}
+};
+
+export default Header;

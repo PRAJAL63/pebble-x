@@ -38,19 +38,14 @@ export default function LoginForm() {
       const response = await login({ email: values.email, password: values.password });
 
       // Store token if provided
-      if (response.token) {
-        localStorage.setItem('authToken', response.token);
-      }
-
-      // Store user data if provided
-      if (response.user) {
-        localStorage.setItem('user', JSON.stringify(response.user));
+      if (response.body.token) {
+        localStorage.setItem('authToken', response.body.token);
       }
 
       console.log('Login successful:', response);
 
       // Navigate to homepage or dashboard
-      navigate('/');
+      navigate('/dashboard');
     } catch (error) {
       console.error('Login error:', error);
 

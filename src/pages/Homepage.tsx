@@ -11,6 +11,7 @@ import {
   Handshake,
   CheckCircle2,
 } from 'lucide-react';
+import { Logo } from '@/components/Logo';
 
 const LOGOS = [
   'Man City',
@@ -69,23 +70,19 @@ export default function Homepage() {
       {/* Navbar */}
       <header className="fixed top-0 w-full bg-white/70 backdrop-blur-xl border-b border-gray-100 z-50 transition-all duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="bg-gradient-to-br from-indigo-600 to-teal-500 p-2.5 rounded-xl shadow-lg shadow-indigo-200">
-              <Cpu className="h-6 w-6 text-white" />
-            </div>
-            <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 tracking-tight">
-              PebbleX
-            </span>
-          </div>
+          <Logo />
 
           <div className="hidden md:flex items-center gap-10 text-sm font-medium text-gray-600">
-            <a href="#marketplace" className="hover:text-indigo-600 transition-colors">
+            <a
+              href="#marketplace"
+              className="hover:text-indigo-600 transition-colors cursor-pointer"
+            >
               Marketplace
             </a>
-            <a href="#solutions" className="hover:text-indigo-600 transition-colors">
+            <a href="#solutions" className="hover:text-indigo-600 transition-colors cursor-pointer">
               Solutions
             </a>
-            <a href="#suppliers" className="hover:text-indigo-600 transition-colors">
+            <a href="#suppliers" className="hover:text-indigo-600 transition-colors cursor-pointer">
               For Suppliers
             </a>
           </div>
