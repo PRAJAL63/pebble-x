@@ -1,0 +1,260 @@
+export interface Product {
+  id: string;
+  name: string;
+  category: string;
+  price: number;
+  stock: number;
+  supplierId: string;
+  description: string;
+  image?: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export const mockProducts: Product[] = [
+  {
+    id: '1',
+    name: 'Electric Drill Professional',
+    category: 'Power Tools',
+    price: 3500,
+    stock: 20,
+    supplierId: 'sup-1',
+    description:
+      'Professional grade electric drill with variable speed control and ergonomic design. Perfect for heavy-duty applications.',
+    image: 'https://images.unsplash.com/photo-1504148455328-c376907d081c?w=400',
+    createdAt: '2026-01-01T00:00:00Z',
+    updatedAt: '2026-01-10T00:00:00Z',
+  },
+  {
+    id: '2',
+    name: 'Cordless Impact Wrench',
+    category: 'Power Tools',
+    price: 4200,
+    stock: 15,
+    supplierId: 'sup-1',
+    description:
+      'High-torque cordless impact wrench with brushless motor. Ideal for automotive and construction work.',
+    image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400',
+    createdAt: '2026-01-02T00:00:00Z',
+    updatedAt: '2026-01-11T00:00:00Z',
+  },
+  {
+    id: '3',
+    name: 'Circular Saw',
+    category: 'Power Tools',
+    price: 2800,
+    stock: 12,
+    supplierId: 'sup-1',
+    description:
+      'Lightweight circular saw with laser guide for precise cutting. Includes safety features and dust collection port.',
+    image: 'https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=400',
+    createdAt: '2026-01-03T00:00:00Z',
+    updatedAt: '2026-01-09T00:00:00Z',
+  },
+  {
+    id: '4',
+    name: 'Hammer Drill Combo Kit',
+    category: 'Power Tools',
+    price: 5600,
+    stock: 8,
+    supplierId: 'sup-2',
+    description:
+      'Complete hammer drill kit with multiple bits, case, and battery pack. Perfect for masonry and concrete work.',
+    createdAt: '2026-01-04T00:00:00Z',
+    updatedAt: '2026-01-12T00:00:00Z',
+  },
+  {
+    id: '5',
+    name: 'Tool Set Professional 120pc',
+    category: 'Hand Tools',
+    price: 6800,
+    stock: 25,
+    supplierId: 'sup-2',
+    description:
+      'Comprehensive 120-piece tool set with ratchets, sockets, wrenches, and screwdrivers. Includes durable carrying case.',
+    image: 'https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=400',
+    createdAt: '2026-01-05T00:00:00Z',
+    updatedAt: '2026-01-11T00:00:00Z',
+  },
+  {
+    id: '6',
+    name: 'Digital Multimeter',
+    category: 'Testing Equipment',
+    price: 1250,
+    stock: 30,
+    supplierId: 'sup-2',
+    description:
+      'Professional digital multimeter with auto-ranging, backlit display, and protective holster.',
+    createdAt: '2026-01-06T00:00:00Z',
+    updatedAt: '2026-01-10T00:00:00Z',
+  },
+  {
+    id: '7',
+    name: 'Welding Machine MIG 200A',
+    category: 'Welding Equipment',
+    price: 15500,
+    stock: 5,
+    supplierId: 'sup-3',
+    description:
+      'Industrial MIG welding machine with 200A capacity. Includes wire feeder and comprehensive safety features.',
+    image: 'https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=400',
+    createdAt: '2026-01-07T00:00:00Z',
+    updatedAt: '2026-01-12T00:00:00Z',
+  },
+  {
+    id: '8',
+    name: 'Air Compressor 50L',
+    category: 'Compressors',
+    price: 8900,
+    stock: 10,
+    supplierId: 'sup-3',
+    description:
+      'Heavy-duty 50-liter air compressor with oil-free pump. Quiet operation and quick recovery time.',
+    createdAt: '2026-01-08T00:00:00Z',
+    updatedAt: '2026-01-11T00:00:00Z',
+  },
+  {
+    id: '9',
+    name: 'Angle Grinder 2000W',
+    category: 'Power Tools',
+    price: 3200,
+    stock: 18,
+    supplierId: 'sup-1',
+    description:
+      'Powerful 2000W angle grinder with safety guard and side handle. Suitable for cutting and grinding metal.',
+    image: 'https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=400',
+    createdAt: '2026-01-09T00:00:00Z',
+    updatedAt: '2026-01-10T00:00:00Z',
+  },
+  {
+    id: '10',
+    name: 'Jigsaw Variable Speed',
+    category: 'Power Tools',
+    price: 2100,
+    stock: 22,
+    supplierId: 'sup-1',
+    description:
+      'Variable speed jigsaw with orbital action and tool-free blade change system. Perfect for curved cuts.',
+    createdAt: '2026-01-10T00:00:00Z',
+    updatedAt: '2026-01-11T00:00:00Z',
+  },
+  {
+    id: '11',
+    name: 'Measuring Tape 10m',
+    category: 'Hand Tools',
+    price: 450,
+    stock: 50,
+    supplierId: 'sup-2',
+    description: 'Heavy-duty 10-meter measuring tape with auto-lock and impact-resistant case.',
+    createdAt: '2026-01-11T00:00:00Z',
+    updatedAt: '2026-01-12T00:00:00Z',
+  },
+  {
+    id: '12',
+    name: 'Spirit Level 60cm',
+    category: 'Hand Tools',
+    price: 680,
+    stock: 35,
+    supplierId: 'sup-2',
+    description: 'Precision spirit level with magnetic base and reinforced aluminum frame.',
+    createdAt: '2026-01-12T00:00:00Z',
+    updatedAt: '2026-01-12T00:00:00Z',
+  },
+  {
+    id: '13',
+    name: 'Safety Helmet with Visor',
+    category: 'Safety Equipment',
+    price: 850,
+    stock: 40,
+    supplierId: 'sup-3',
+    description:
+      'Industrial safety helmet with integrated face visor and adjustable suspension system.',
+    image: 'https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=400',
+    createdAt: '2025-12-28T00:00:00Z',
+    updatedAt: '2026-01-10T00:00:00Z',
+  },
+  {
+    id: '14',
+    name: 'Work Gloves Leather',
+    category: 'Safety Equipment',
+    price: 380,
+    stock: 100,
+    supplierId: 'sup-3',
+    description: 'Durable leather work gloves with reinforced palms and comfortable fit.',
+    createdAt: '2025-12-29T00:00:00Z',
+    updatedAt: '2026-01-11T00:00:00Z',
+  },
+  {
+    id: '15',
+    name: 'Ladder Aluminum 3m',
+    category: 'Access Equipment',
+    price: 4500,
+    stock: 12,
+    supplierId: 'sup-3',
+    description: 'Lightweight aluminum ladder with anti-slip feet and 150kg load capacity.',
+    createdAt: '2025-12-30T00:00:00Z',
+    updatedAt: '2026-01-09T00:00:00Z',
+  },
+  {
+    id: '16',
+    name: 'Toolbox Metal 5-Drawer',
+    category: 'Storage',
+    price: 5200,
+    stock: 8,
+    supplierId: 'sup-2',
+    description:
+      'Heavy-duty metal toolbox with 5 drawers and ball-bearing slides. Lockable for security.',
+    image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400',
+    createdAt: '2025-12-31T00:00:00Z',
+    updatedAt: '2026-01-08T00:00:00Z',
+  },
+  {
+    id: '17',
+    name: 'Pressure Washer 2200PSI',
+    category: 'Cleaning Equipment',
+    price: 7800,
+    stock: 6,
+    supplierId: 'sup-1',
+    description:
+      'Electric pressure washer with 2200PSI output. Includes multiple nozzles and detergent tank.',
+    createdAt: '2026-01-01T12:00:00Z',
+    updatedAt: '2026-01-07T00:00:00Z',
+  },
+  {
+    id: '18',
+    name: 'Generator Portable 3000W',
+    category: 'Power Generation',
+    price: 18500,
+    stock: 4,
+    supplierId: 'sup-3',
+    description:
+      'Portable gasoline generator with 3000W output. Quiet operation and fuel-efficient.',
+    image: 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=400',
+    createdAt: '2026-01-02T12:00:00Z',
+    updatedAt: '2026-01-06T00:00:00Z',
+  },
+  {
+    id: '19',
+    name: 'Pliers Set 4-Piece',
+    category: 'Hand Tools',
+    price: 1150,
+    stock: 45,
+    supplierId: 'sup-2',
+    description:
+      'Professional 4-piece pliers set including needle-nose, cutting, slip-joint, and locking pliers.',
+    createdAt: '2026-01-03T12:00:00Z',
+    updatedAt: '2026-01-05T00:00:00Z',
+  },
+  {
+    id: '20',
+    name: 'Screwdriver Set 30-Piece',
+    category: 'Hand Tools',
+    price: 780,
+    stock: 60,
+    supplierId: 'sup-2',
+    description:
+      'Comprehensive screwdriver set with magnetic tips and ergonomic handles. Includes precision drivers.',
+    createdAt: '2026-01-04T12:00:00Z',
+    updatedAt: '2026-01-04T12:00:00Z',
+  },
+];
