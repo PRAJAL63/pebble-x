@@ -1,6 +1,6 @@
-import type { Product } from '@/mocks/products';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import type { Product } from '@/services/product.service';
 
 interface ProductCardProps {
   product: Product;
@@ -22,8 +22,8 @@ export default function ProductCard({ product, onClick }: ProductCardProps) {
       onClick={onClick}
     >
       <div className="aspect-square relative bg-gray-100">
-        {product.image ? (
-          <img src={product.image} alt={product.name} className="object-cover w-full h-full" />
+        {product.images ? (
+          <img src={product.images} alt={product.name} className="object-cover w-full h-full" />
         ) : (
           <div className="flex items-center justify-center h-full text-gray-400">
             <span className="text-4xl">📦</span>
