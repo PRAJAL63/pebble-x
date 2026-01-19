@@ -18,7 +18,7 @@ const RegisterSchema = z
       .min(1, 'Confirm Password is required')
       .min(8, 'Minimum password length should be more than 8')
       .max(50, 'Maximum password length should be less than 50'),
-    role: z.enum(['supplier', 'admin']),
+    role: z.enum(['SUPPLIER', 'ADMIN']),
     phone: z
       .number({
         message: 'Phone number is required',

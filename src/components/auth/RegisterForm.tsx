@@ -14,6 +14,13 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
 import { Eye, EyeOff } from 'lucide-react';
 
 import { toast } from 'sonner';
@@ -31,7 +38,7 @@ export default function RegisterForm() {
       email: '',
       password: '',
       confirmPassword: '',
-      role: 'supplier',
+      role: 'SUPPLIER',
       phone: '' as any,
       address: '',
     },
@@ -52,19 +59,19 @@ export default function RegisterForm() {
       }
     } catch (error) {
       console.error(error);
-      setError('Unexpected error occurred. Please try again.');
-      toast.error('Unexpected error occurred. Please try again.');
+      setError(
+        error instanceof Error ? error.message : 'Unexpected error occurred. Please try again.',
+      );
+      toast.error(
+        error instanceof Error ? error.message : 'Unexpected error occurred. Please try again.',
+      );
     }
   };
   return (
     <div className="flex flex-col justify-center w-full lg:w-1/2 px-10">
       <div className="max-w-md w-full mx-auto ">
         <h2 className="text-3xl font-bold mb-6 text-center text-gray-800">Register</h2>
-        {error && (
-          <div className="mb-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded-lg">
-            {error}
-          </div>
-        )}
+
         <Form {...form}>
           <form onSubmit={form.handleSubmit(handleRegister)}>
             <FormField
@@ -161,9 +168,17 @@ export default function RegisterForm() {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Role</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Enter your role" {...field} />
-                  </FormControl>
+                  <Select onValueChange={field.onChange} value={field.value}>
+                    <FormControl>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Select your role" />
+                      </SelectTrigger>
+                    </FormControl>
+                    <SelectContent className="bg-white">
+                      <SelectItem value="SUPPLIER">Supplier</SelectItem>
+                      <SelectItem value="ADMIN">Admin</SelectItem>
+                    </SelectContent>
+                  </Select>
                   <FormMessage className="text-red-500" />
                 </FormItem>
               )}
@@ -201,6 +216,7 @@ export default function RegisterForm() {
                 </FormItem>
               )}
             />
+            {error && <p className="text-red-500 mt-2 text-center">{error}</p>}
             <Button
               type="submit"
               className="w-full bg-teal-600 text-white py-3 rounded-lg hover:bg-teal-700 transition duration-300 font-semibold mt-4"

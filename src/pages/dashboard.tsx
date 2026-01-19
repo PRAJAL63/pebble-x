@@ -28,9 +28,7 @@ export default function Dashboard() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 gap-6">
-            <Countrysales />
-          </div>
+          <div className="grid grid-cols-1 gap-6">{/* <Countrysales /> */}</div>
         </main>
       </div>
     </div>

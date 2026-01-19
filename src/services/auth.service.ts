@@ -29,7 +29,7 @@ export interface RegisterResponse {
   message: string;
 }
 export interface ProfileResponse {
-  succcess: boolean;
+  success: boolean;
   user: UserProfile;
   message: string;
 }
@@ -53,7 +53,16 @@ export const authService = {
     window.location.href = '/login';
   },
   register: async (data: RegisterInput) => {
-    const response = await api.post<RegisterResponse>('/auth/register', data);
-    return response.data;
+    try {
+      const response = await api.post<RegisterResponse>('/auth/register', data);
+      return response.data;
+    } catch (error) {
+      const err = error as {
+        response?: { data?: { body?: { message?: string }; message?: string } };
+      };
+      const errorMessage =
+        err.response?.data?.body?.message || err.response?.data?.message || 'Failed to fetch clans';
+      throw new Error(errorMessage);
+    }
   },
 };

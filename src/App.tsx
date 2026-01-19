@@ -18,6 +18,7 @@ import ProductForm from './pages/supplier/ProductForm';
 import SupplierOrders from './pages/supplier/Orders';
 import SupplierOrderDetails from './pages/supplier/OrderDetails';
 import SupplierReports from './pages/supplier/Reports';
+import SupplierProfile from './pages/supplier/Profile';
 
 // Admin pages
 import AdminHome from './pages/admin/Home';
@@ -28,6 +29,7 @@ import AdminOrderDetails from './pages/admin/OrderDetails';
 import EditProductForm from './pages/supplier/EditProductForm';
 import UserTable from './pages/admin/UserTable';
 import UserDetails from './pages/admin/UserDetails';
+import Profile from './pages/admin/Profile';
 
 export default function App() {
   return (
@@ -98,6 +100,14 @@ export default function App() {
           </ProtectedRoute>
         }
       />
+      <Route
+        path="/supplier/profile"
+        element={
+          <ProtectedRoute allowedRoles={['SUPPLIER']}>
+            <SupplierProfile />
+          </ProtectedRoute>
+        }
+      />
 
       {/* Admin routes */}
       <Route
@@ -155,6 +165,15 @@ export default function App() {
         element={
           <ProtectedRoute allowedRoles={['ADMIN']}>
             <UserDetails />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/admin/profile"
+        element={
+          <ProtectedRoute allowedRoles={['ADMIN']}>
+            <Profile />
           </ProtectedRoute>
         }
       />

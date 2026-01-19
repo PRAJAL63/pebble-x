@@ -77,7 +77,7 @@ export default function OrderTable({ orders, isSupplier = false }: OrderTablePro
               <TableCell>
                 {formatCurrency(
                   order.items.reduce(
-                    (total, item) => total + item.product.price * item.quantity,
+                    (total, item) => total + (item.product?.price ?? 0) * item.quantity,
                     0,
                   ),
                 )}

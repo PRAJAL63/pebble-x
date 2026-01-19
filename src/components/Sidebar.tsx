@@ -8,10 +8,11 @@ import {
   Package,
   FileText,
   LogOut,
+  User,
 } from 'lucide-react';
 import { useGetMe } from '@/hooks/useAuth';
 import { ModeToggle } from './mode-toggle';
-import { useState } from 'react';
+import { Profiler, useState } from 'react';
 import {
   AlertDialog,
   AlertDialogAction,
@@ -81,7 +82,7 @@ const Sidebar = () => {
         )}
 
         {/* Default Navigation (Admin/Dashboard) */}
-        {!userRole || userRole === 'ADMIN' ? (
+        {userRole === 'ADMIN' ? (
           <>
             <div className="text-gray-500 dark:text-gray-400 font-semibold text-sm uppercase">
               Marketing
@@ -123,8 +124,13 @@ const Sidebar = () => {
           System
         </div>
         <ul className="space-y-2">
-          <li className="flex items-center space-x-2 text-gray-500 dark:text-gray-400 rounded-sm mr-20 px-3 py-2 hover:bg-emerald-50 dark:hover:bg-gray-800 cursor-pointer transition-colors">
-            <Settings size={18} /> <span>Settings</span>
+          <li
+            className="flex items-center space-x-2 text-gray-500 dark:text-gray-400 rounded-sm mr-20 px-3 py-2 hover:bg-emerald-50 dark:hover:bg-gray-800 cursor-pointer transition-colors"
+            onClick={() =>
+              navigate(userRole === 'SUPPLIER' ? '/supplier/profile' : '/admin/profile')
+            }
+          >
+            <User size={18} /> <span>Profile</span>
           </li>
           <li className="text-gray-500 dark:text-gray-400 rounded-sm mr-20 px-3 py-2 hover:bg-emerald-50 dark:hover:bg-gray-800 transition-colors">
             <ModeToggle />
